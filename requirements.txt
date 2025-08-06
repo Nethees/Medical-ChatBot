@@ -1,3 +1,9 @@
+# Enforce torch first
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0+cpu
+torchvision==0.16.0+cpu
+torchaudio==2.1.0+cpu
+
 # Core LLM + LangChain packages
 langchain==0.1.17
 langchain-core==0.1.52
@@ -23,11 +29,5 @@ pypdf==3.17.4
 # Web + Env
 flask
 python-dotenv
-
-# Use torch CPU-only variant to avoid GPU dependencies
-torch==2.1.0+cpu
-torchvision==0.16.0+cpu
-torchaudio==2.1.0+cpu
--f https://download.pytorch.org/whl/torch_stable.html
 
 # -e .
