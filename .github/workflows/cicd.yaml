@@ -83,17 +83,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Clean up old Docker images
+      - name: Clean up old Docker images, conyainers, volumes
         run: |
+          docker stop stapp || true
+          docker rm -f stapp || true
           docker system prune -a -f --volumes
-
+          
       - name: Pull images
         run: |
           docker pull ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:main
 
-      - name: Remove existing container if it exists
-        run: |
-          docker rm -f stapp || true
       - name: Run Docker Image to serve users
         run: |
           docker run -d \
@@ -108,12 +107,3 @@ jobs:
           -e LANGCHAIN_API_KEY='${{ secrets.LANGCHAIN_API_KEY }}' \
           -e SERPAPI_API_KEY='${{ secrets.SERPAPI_API_KEY }}' \
             ${{ secrets.REGISTRY }}/${{ secrets.IMAGE_NAME }}:main
-
-      - name: Clean previous images and containers
-        run: |
-         docker system prune -f
-      
-
-
-
-    
