@@ -8,12 +8,12 @@ torchaudio==2.1.0+cpu
 langchain==0.1.17
 langchain-core==0.1.52
 langchain-community==0.0.37
-langchain-groq==0.0.2
 langchain-openai==0.1.7
 langchain-huggingface==0.0.3
 langchain-pinecone==0.0.3
 langchain-experimental==0.0.1
 google-search-results==2.4.2
+git+https://github.com/langchain-ai/langchain.git@master#subdirectory=libs/langchain-groq
 
 # Vector DB - Pinecone
 pinecone-client==3.0.0

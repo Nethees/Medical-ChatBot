@@ -1,8 +1,10 @@
 FROM python:3.10-slim
 
 # Install system-level dependencies for building Python packages
+# Includes build tools + git (needed for installing from GitHub)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
