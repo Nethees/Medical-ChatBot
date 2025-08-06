@@ -87,12 +87,12 @@ def is_uncertain_answer(answer: str) -> bool:
     ]
     return any(phrase in answer.lower() for phrase in uncertain_phrases)
 
-
+# Route to render the chat interface
 @app.route("/")
 def index():
     return render_template('chat.html')
 
-
+# Route to handle chat requests
 @app.route("/get", methods=["POST"])
 def chat():
     msg = request.form["msg"]
