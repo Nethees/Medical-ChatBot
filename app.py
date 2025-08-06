@@ -123,5 +123,6 @@ def chat():
     # Return the answer directly
     return str(final_answer)
 
+# Route to handle chat history
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port= 8501, debug= True)
