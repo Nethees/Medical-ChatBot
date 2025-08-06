@@ -78,8 +78,7 @@ serp_agent = initialize_agent(
     verbose=True
 )
 
-
-
+# Function to check if the answer is uncertain or lacks information
 def is_uncertain_answer(answer: str) -> bool:
     """Check if the answer indicates uncertainty or lack of information."""
     uncertain_phrases = [
