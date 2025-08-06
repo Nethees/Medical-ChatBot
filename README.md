@@ -1,4 +1,4 @@
-# AI-Medical-LLM
+# Generative AI-Medical ChatBot-LLM
 
 ## Project Overview:
 
