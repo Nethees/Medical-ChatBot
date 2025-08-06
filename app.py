@@ -98,6 +98,8 @@ def chat():
     msg = request.form["msg"]
     print("User input:", msg)
 
+    #Step 1: Use the QA chain to get an answer from the book
+    # Note: The chain will use the retriever to find relevant documents
     # Use invoke() instead of deprecated run()
     response = qa_chain.invoke({"question": msg})
     raw_answer = response["answer"]
